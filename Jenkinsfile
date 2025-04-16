@@ -1,12 +1,14 @@
 pipeline {
-    agent any
+    agent{
+        label'slave_node'
+    }
         tools{
             maven'maven'
         }
     stages {
         stage('maven project') {
             steps {
-                mvn'clean package' 
+                sh'mvn clean package' 
             }
         }
     }
